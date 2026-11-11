@@ -5,10 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#100e16">
-  <meta name="description" content="مقارنة بين تعريبي أوموري مع النص الإنجليزي وشواهد مرقّمة ونسبة التطابق الحرفي.">
+  <meta name="review-version" content="00c3253d0ae0eb1e0035a0a192ded749240c7c2f46fb041eaeb40d2f2bfb06b9">
+  <meta name="description" content="مقارنة الأخطاء الإملائية والنحوية والصياغة العربية في تعريبي أوموري.">
   <title>مقارنة تعريبي أوموري</title>
   <link rel="icon" type="image/webp" href="./omori.webp">
   <link rel="stylesheet" href="./site.css">
+  <link rel="stylesheet" href="./language.css?v=ded37128ba97">
   <script src="./site.js" defer></script>
 </head>
 <body>
@@ -16,18 +18,14 @@
   <header class="header">
     <div class="shell header-inner">
       <a class="wordmark" href="./" lang="en" dir="ltr">OMORI<span> / </span>AR</a>
-      <nav aria-label="أقسام الصفحة">
-        <a href="#examples">الشواهد</a>
-        <a href="#method">طريقة الحساب</a>
-      </nav>
+      <nav aria-label="أقسام الصفحة"><a href="#examples">الشواهد</a><a href="#method">طريقة الحساب</a></nav>
     </div>
   </header>
   <main id="main" class="shell">
     <section class="hero" aria-labelledby="title">
       <div class="hero-copy">
-        <p class="eyebrow" lang="en" dir="ltr">OMORI</p>
         <h1 id="title">مقارنة تعريبي <span>أوموري</span></h1>
-        <p class="intro">رجّحت المراجعة تعريب هشام في دقّة المعنى، ونقل الدعابة، ووضوح نصوص اللعب. شوف الفرق بين الصياغتين جنبًا إلى جنب مع الأصل الإنجليزي.</p>
+        <p class="intro">أخطاء إملائية ونحوية وصياغات ركيكة في التعريب الآخر. كل بطاقة تظلّل موضع الخطأ، وتعرض صياغة هشام والأصل الإنجليزي بجانبه.</p>
         <a class="primary-link" href="#examples">شاهد المقارنة <span aria-hidden="true">↓</span></a>
       </div>
       <div class="hero-aside">
@@ -40,640 +38,261 @@
         </div>
       </div>
     </section>
-
     <section id="examples" class="examples" aria-labelledby="examples-title">
       <div class="section-head">
         <div>
-          <h2 id="examples-title">أين تفوّق تعريب هشام؟</h2>
-          <p class="section-note">تتضمن الشواهد تفاصيل من القصة.</p>
+          <h2 id="examples-title">الشواهد اللغوية</h2>
+          <p class="section-note">النص المظلّل يبيّن مكان الخطأ مباشرة.</p>
         </div>
-        <output id="count" aria-live="polite">45 شاهدًا</output>
+        <output id="count" aria-live="polite">18 شاهدًا</output>
       </div>
       <div class="controls" hidden>
-        <div class="filters" role="group" aria-label="تصفية الشواهد حسب الموضوع">
-          <button type="button" data-filter="all" aria-pressed="true">الكل</button>
-          <button type="button" data-filter="meaning" aria-pressed="false">المعنى والنبرة</button>
-<button type="button" data-filter="humor" aria-pressed="false">النكتة والتورية</button>
-<button type="button" data-filter="gameplay" aria-pressed="false">نصوص اللعب</button>
-<button type="button" data-filter="details" aria-pressed="false">تفاصيل النص</button>
-        </div>
-        <label class="search">
-          <span class="sr-only">ابحث في الشواهد</span>
-          <input type="search" id="search" placeholder="ابحث بكلمة أو رقم المدخل">
-        </label>
-      </div>
-      <div id="cards">
-        <article class="card" id="example-1855" data-category="meaning">
-  <header class="card-head">
-    <div><p class="category">المعنى والنبرة</p><h3>رد سويتهارت</h3></div>
-    <a class="entry" href="#example-1855" aria-label="رابط شاهد رد سويتهارت"><bdi>#1855</bdi></a>
-  </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>WELL... I... NEVER!!</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>يا... لها... من وقاحة!!</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>حسنًا... أنا... لن!!</p></div></div>
+    <div class="filters" role="group" aria-label="نوع الخطأ">
+      <button type="button" data-filter="all" aria-pressed="true">الكل</button><button type="button" data-filter="spelling" aria-pressed="false">إملاء</button><button type="button" data-filter="grammar" aria-pressed="false">نحو</button><button type="button" data-filter="style" aria-pressed="false">صياغة</button>
+    </div>
+    <label class="search"><span class="sr-only">ابحث في الشواهد</span><input type="search" id="search" placeholder="ابحث بكلمة أو رقم المدخل"></label>
   </div>
-  <p class="reason"><strong>سبب الترجيح</strong> هشام ينقل استنكار الشخصية «يا لها من وقاحة»، بينما تظل الجملة في التعريب الآخر معلّقة عند «أنا... لن».</p>
-</article>
-<article class="card" id="example-11936" data-category="meaning">
+      <div id="cards"><article class="card" id="example-4-9544a187" data-case="example-4-9544a187" data-category="spelling">
   <header class="card-head">
-    <div><p class="category">المعنى والنبرة</p><h3>من كسر النافذة؟</h3></div>
-    <a class="entry" href="#example-11936" aria-label="رابط شاهد من كسر النافذة؟"><bdi>#11936</bdi></a>
+    <div><p class="category">إملاء</p><h3>بعثرة الأوراق</h3></div>
+    <a class="entry" href="#example-4-9544a187" aria-label="رابط الشاهد"><bdi>#4</bdi></a>
   </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>... uh... heard that the old window got broken when a kid accidentally threw a baseball into it.
-Probably should have aimed that better...</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>أنا... آه... سمعت أن النافذة القديمة انكسرت حين رماها صبي بكرة بيسبول بالخطأ.
-كان عليّ أن أصوّب بدقة أكبر...</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>أنا... إمم... سمعت أن النافذة القديمة انكسرت حين رمى طفل كرة بيسبول فيها بالخطأ.
-ربما كان ينبغي له أن يصوّب بشكل أفضل...</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> ضمير المتكلم يكشف أن كيل نفسه كسر النافذة. التعريب الآخر يسند سوء التصويب إلى الصبي الذي يتحدث عنه.</p>
+  <div class="quotes"><div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>بربك..ما خطبك يا أوبري!؟
+<mark class="error">لخطبتي</mark> الأوراق!
+وكنتُ سأفوز ايضا.</p></div></div>
+<div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>أوه، يا رجل... ما هذا يا أوبري؟!
+لقد بعثرتِ كل الأوراق!
+وكنت على وشك الفوز أيضًا.</p></div></div>
+<div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>Aww, man... What the heck, AUBREY!?
+You messed up all the cards!
+I was winning, too.</p></div></div></div>
+  <p class="reason"><strong>موضع الخطأ</strong> الكلمة مكتوبة بصورة غير سليمة. في هذا السياق يصح «لخبطتِ» أو «بعثرتِ».</p>
+  
 </article>
-<article class="card" id="example-657" data-category="meaning">
+<article class="card" id="example-6-8a731867" data-case="example-6-8a731867" data-category="grammar">
   <header class="card-head">
-    <div><p class="category">المعنى والنبرة</p><h3>توصيلة بازل</h3></div>
-    <a class="entry" href="#example-657" aria-label="رابط شاهد توصيلة بازل"><bdi>#657</bdi></a>
+    <div><p class="category">نحو</p><h3>رفع المبتدأ</h3></div>
+    <a class="entry" href="#example-6-8a731867" aria-label="رابط الشاهد"><bdi>#6</bdi></a>
   </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>Umm... Weren&#x27;t you guys just going to drop me off?</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>أمم... ألم تكونا ستكتفيان بإيصالي؟</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>أمم... ألم تكنوا فقط ستقومون بإسقاطي؟</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> المقصود بـ drop me off إيصال بازل إلى وجهته. «إسقاطي» يغيّر الفعل تمامًا.</p>
+  <div class="quotes"><div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>لا أريد سماع هذا منك هيرو!
+<mark class="error">فاهك</mark> نطق بهذا لأنك كنت ستخسر.</p></div></div>
+<div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>لا تقل لي هذا يا هيرو!
+أنت تقول هذا فقط لأنك كنت تخسر.</p></div></div>
+<div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>Don&#x27;t give me that, HERO!
+You only say that ‘cause you were losing.</p></div></div></div>
+  <p class="reason"><strong>موضع الخطأ</strong> المبتدأ مرفوع. إذا استُعمل «فو» بهذه الصيغة فالصواب «فوك نطق».</p>
+  
 </article>
-<article class="card" id="example-1292" data-category="meaning">
+<article class="card" id="example-2418-19ce59ee" data-case="example-2418-19ce59ee" data-category="grammar">
   <header class="card-head">
-    <div><p class="category">المعنى والنبرة</p><h3>مايك يعقد القران</h3></div>
-    <a class="entry" href="#example-1292" aria-label="رابط شاهد مايك يعقد القران"><bdi>#1292</bdi></a>
+    <div><p class="category">نحو</p><h3>اعتذار أوبري</h3></div>
+    <a class="entry" href="#example-2418-19ce59ee" aria-label="رابط الشاهد"><bdi>#2418</bdi></a>
   </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>SPROUT MOLE MIKE... I order you to marry us immediately!</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>مايك خلد البراعم... آمرك بأن تعقد زواجنا فورًا!</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>برعم الخلد مايك... أنا أأمرك بأن تتزوجنا فورًا!</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> سويتهارت تأمر مايك بأن يعقد زواجها. «تتزوجنا» تغيّر دور مايك في المشهد.</p>
+  <div class="quotes"><div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>كم أنا <mark class="error">آسف</mark>، يا باسيل. أرجوك سامحني...</p></div></div>
+<div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>أنا آسفة جدًا يا بازل. أرجوك سامحني...</p></div></div>
+<div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>I&#x27;m so sorry, BASIL. Please forgive me...</p></div></div></div>
+  <p class="reason"><strong>موضع الخطأ</strong> أوبري تتكلّم عن نفسها. الصواب «آسفة».</p>
+  
 </article>
-<article class="card" id="example-1494" data-category="meaning">
+<article class="card" id="example-2443-d3f01455" data-case="example-2443-d3f01455" data-category="grammar">
   <header class="card-head">
-    <div><p class="category">المعنى والنبرة</p><h3>تهدئة الأم</h3></div>
-    <a class="entry" href="#example-1494" aria-label="رابط شاهد تهدئة الأم"><bdi>#1494</bdi></a>
+    <div><p class="category">نحو</p><h3>مطابقة الفعل للفاعل</h3></div>
+    <a class="entry" href="#example-2443-d3f01455" aria-label="رابط الشاهد"><bdi>#2443</bdi></a>
   </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>There, there, honey... Cheer up...</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>اهدئي يا عزيزتي... لا تحزني...</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>هناك، هناك يا عزيزتي... لا تحزني...</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> عبارة There, there للتهدئة. «اهدئي يا عزيزتي» تؤدي وظيفتها في الحوار.</p>
+  <div class="quotes"><div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>[اسم اللاعب] وكيل تخليا عن صنع تيجان الزهور وركضوا، لكن أوبري وأنا فهمنا الأمور بسرعة جدًا!
+
+الجميع يعتقد أن <mark class="error">تيجان الزهور يناسبني</mark> حقًا.
+ربما فقط زهرة تكون كافية.</p></div></div>
+<div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>[اسم اللاعب] وكيل استسلما وتركا صنع أكاليل الزهور وركضا بعيدًا، لكنني وأوبري تعلمنا بسرعة كبيرة!
+
+يرى الجميع أن إكليل زهور يليق بي جدًا.
+ربما تكفيني زهرة واحدة.</p></div></div>
+<div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>[Player name] and KEL gave up on making flower crowns and ran off, but AUBREY and I got the hang of it really fast!
+
+Everyone thinks a flower crown really suits me.
+Maybe just a flower is okay.</p></div></div></div>
+  <p class="reason"><strong>موضع الخطأ</strong> «تيجان» جمع لغير العاقل. الصياغة المستقيمة «تيجان الزهور تناسبني».</p>
+  
 </article>
-<article class="card" id="example-2752" data-category="meaning">
+<article class="card" id="example-2541-42c556c9" data-case="example-2541-42c556c9" data-category="style">
   <header class="card-head">
-    <div><p class="category">المعنى والنبرة</p><h3>وصف الأخ</h3></div>
-    <a class="entry" href="#example-2752" aria-label="رابط شاهد وصف الأخ"><bdi>#2752</bdi></a>
+    <div><p class="category">صياغة</p><h3>وصف ثنائي</h3></div>
+    <a class="entry" href="#example-2541-42c556c9" aria-label="رابط الشاهد"><bdi>#2541</bdi></a>
   </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>your mind, OMORI!
-I need to set an example for my sometimes-boring
-little brother!</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>وسّع آفاقك يا أوموري!
-عليّ أن أكون قدوة لأخي الصغير
-الذي يصبح مملًا أحيانًا!</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>وسّع أفقك يا أوموري!
-عليّ أن أكون قدوة لأخي الصغير الذي يشعر بالملل أحيانًا.</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> ماري تصف أخاها بأنه مملّ أحيانًا. الآخر يجعله يشعر بالملل.</p>
+  <div class="quotes"><div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>&quot;نحن على وشك العودة للبيت، لكنني تمكنت من التقاط صورة أخيرة مع ماري وهيرو! يبدوان سعيدَيْن جداً...
+<mark class="error">زوج مصنوع في السماء</mark>!&quot;</p></div></div>
+<div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>&quot;نحن على وشك العودة إلى المنزل، لكنني تمكنت من التقاط صورة أخيرة مع ماري وهيرو! يبدوان سعيدين جدًا...
+ثنائي مثالي!&quot;</p></div></div>
+<div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>&quot;We&#x27;re about to head home, but I managed to catch one last photo with MARI and HERO! They look so happy...
+A match made in heaven!&quot;</p></div></div></div>
+  <p class="reason"><strong>موضع الخطأ</strong> «مصنوع» توحي بشيء جرى تصنيعه. «ثنائي مثالي» تعبير طبيعي عن انسجامهما.</p>
+  
 </article>
-<article class="card" id="example-5082" data-category="meaning">
+<article class="card" id="example-2974-4082b079" data-case="example-2974-4082b079" data-category="style">
   <header class="card-head">
-    <div><p class="category">المعنى والنبرة</p><h3>رجاء بازل</h3></div>
-    <a class="entry" href="#example-5082" aria-label="رابط شاهد رجاء بازل"><bdi>#5082</bdi></a>
+    <div><p class="category">صياغة</p><h3>التعبير عن الانتظار</h3></div>
+    <a class="entry" href="#example-2974-4082b079" aria-label="رابط الشاهد"><bdi>#2974</bdi></a>
   </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>Please don&#x27;t... leave me alone... again...</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>أرجوك لا... تتركني وحدي... مجددًا...</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>أرجوك لا... اتركني وحدي... مجددًا...</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> «لا... تتركني» تحفظ طلب بازل. «لا... اتركني» تجعل الشطر الثاني يُقرأ كأمر بالابتعاد.</p>
+  <div class="quotes"><div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>سأحدّق في هذا التمثال <mark class="error">ريثما آمل أن</mark> تستيقظ قواي النفسية.</p></div></div>
+<div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>سأحدق في هذا التمثال، وآمل أن تستيقظ قواي الخارقة في هذه الأثناء.</p></div></div>
+<div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>I will stare at this statue and hope my psychic powers awaken in the meantime.</p></div></div></div>
+  <p class="reason"><strong>موضع الخطأ</strong> «ريثما» تربط الانتظار بحدوث أمر. «ريثما آمل» تربط الانتظار بالأمل نفسه، فتتعثر الجملة.</p>
+  
 </article>
-<article class="card" id="example-4200" data-category="meaning">
+<article class="card" id="example-4297-f5f2bb96" data-case="example-4297-f5f2bb96" data-category="style">
   <header class="card-head">
-    <div><p class="category">المعنى والنبرة</p><h3>وحدة بازل</h3></div>
-    <a class="entry" href="#example-4200" aria-label="رابط شاهد وحدة بازل"><bdi>#4200</bdi></a>
+    <div><p class="category">صياغة</p><h3>نصيحة في لعبة الورق</h3></div>
+    <a class="entry" href="#example-4297-f5f2bb96" aria-label="رابط الشاهد"><bdi>#4297</bdi></a>
   </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>whole time I&#x27;ve been here, I&#x27;ve been looking through my PHOTO ALBUM to keep me company...</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>طوال وجودي هنا، كنت أتصفح ألبوم الصور ليؤنس وحدتي...</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>طوال الوقت الذي قضيته هنا، كنت أتصفح ألبوم الصور لأبقى بصحبة شيء ما...</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> «ليؤنس وحدتي» يوضح أن ألبوم الصور هو ما يخفف وحدة بازل.</p>
-</article>
-<article class="card" id="example-6278" data-category="meaning">
-  <header class="card-head">
-    <div><p class="category">المعنى والنبرة</p><h3>من بقي في المكان؟</h3></div>
-    <a class="entry" href="#example-6278" aria-label="رابط شاهد من بقي في المكان؟"><bdi>#6278</bdi></a>
-  </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>It&#x27;s been a bit empty around here lately, so I always worry that the children who are left will start getting lonely...</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>قلّ عدد الأطفال هنا مؤخرًا، لذا أخشى دائمًا أن يبدأ الباقون بالشعور بالوحدة...</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>كان المكان هنا فارغاً مؤخراً، لذا أقلق دوماً إن كان الأطفال الغائبون يشعرون بالوحدة أم لا...</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> بالمي قلقة على الأطفال الذين بقوا في المكان. صياغة الآخر تنقل القلق إلى الغائبين.</p>
-</article>
-<article class="card" id="example-6554" data-category="meaning">
-  <header class="card-head">
-    <div><p class="category">المعنى والنبرة</p><h3>رباطة جأش بيرلي</h3></div>
-    <a class="entry" href="#example-6554" aria-label="رابط شاهد رباطة جأش بيرلي"><bdi>#6554</bdi></a>
-  </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>I heard they made BERLY head of security!
-They say she&#x27;s got a stiff upper lip!</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>سمعت أنهم عيّنوا بيرلي رئيسة للأمن!
-يقولون إنها لا تهتز أمام شيء!</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>سمعت أن بيرلي أصبحت رئيسة الأمن!
-قالوا أن لديها شفها علوي متصلب!</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> تعبير stiff upper lip يصف رباطة الجأش. «لا تهتز أمام شيء» تنقل الصفة بدل وصف الشفة حرفيًا.</p>
-</article>
-<article class="card" id="example-7502" data-category="meaning">
-  <header class="card-head">
-    <div><p class="category">المعنى والنبرة</p><h3>اتجاه الرعاية</h3></div>
-    <a class="entry" href="#example-7502" aria-label="رابط شاهد اتجاه الرعاية"><bdi>#7502</bdi></a>
-  </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>have forsaken them, yet they still yearn for your care. Their souls know nothing but how to scream for help. Do you take pity on them?</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>لقد تخليت عنهم، ومع ذلك ما زالوا يتوقون إلى رعايتك. لا تعرف أرواحهم سوى الصراخ طلبًا للنجدة. أتشفق عليهم؟</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>تخليت أنت عنهم، لكن لا زالوا قلقون ومهتمون بك. أرواحهم لا تعرف شيئاً إلا البكاء للمساعدة. هل تشفق عليهم؟</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> الأصل يقول إنهم يرجون منك أن تعتني بهم. صياغة الآخر تجعلهم هم المهتمين بك.</p>
-</article>
-<article class="card" id="example-7632" data-category="meaning">
-  <header class="card-head">
-    <div><p class="category">المعنى والنبرة</p><h3>ساعة ذات بندول</h3></div>
-    <a class="entry" href="#example-7632" aria-label="رابط شاهد ساعة ذات بندول"><bdi>#7632</bdi></a>
-  </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>A grandfather clock.</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>ساعة أرضية ذات بندول.</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>ساعة جدّية.</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> grandfather clock نوع من الساعات الأرضية ذات البندول. «ساعة جدّية» تغيّر مدلول الاسم.</p>
-</article>
-<article class="card" id="example-8067" data-category="meaning">
-  <header class="card-head">
-    <div><p class="category">المعنى والنبرة</p><h3>هيرو يطمئن أوبري</h3></div>
-    <a class="entry" href="#example-8067" aria-label="رابط شاهد هيرو يطمئن أوبري"><bdi>#8067</bdi>، <bdi>#8076</bdi></a>
-  </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>... It&#x27;s okay, AUBREY. We&#x27;ve all made mistakes.</p><p>&#x27;t be silly, AUBREY. Of course you do.</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>اسمعي... لا بأس يا أوبري. كلنا ارتكبنا أخطاء.</p><p>لا تقولي هذا يا أوبري. بالطبع تستحقين.</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>مرحبًا... لا بأس يا أوبري. كلنا ارتكبنا أخطاء.</p><p>لا تكن سخيفًا يا أوبري. بالطبع تستحقين.</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> «اسمعي» تناسب لحظة التهدئة، و«لا تقولي» تحافظ على خطاب أوبري بالمؤنث.</p>
-</article>
-<article class="card" id="example-9635" data-category="meaning">
-  <header class="card-head">
-    <div><p class="category">المعنى والنبرة</p><h3>ذكرى التمثال والبحيرة</h3></div>
-    <a class="entry" href="#example-9635" aria-label="رابط شاهد ذكرى التمثال والبحيرة"><bdi>#9635</bdi>، <bdi>#9637</bdi>، <bdi>#9638</bdi>، <bdi>#9640</bdi></a>
-  </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>&quot;☐ shuffles up the statue, and looks down at the moving water. He can hear his heartbeat. His ears begin to ring.&quot;</p><p>&quot;He feels something crawling on his shoulder and his eyes fly open to meet with those of a black spider.&quot;</p><p>&quot;In an instant, ☐ loses all sense and hurls himself into the lake. Water fills his nose. He exerts his limbs, but the water is stronger.&quot;</p><p>&quot;☐ shuts his eyes...
-and waits for the brothers to save him.&quot;</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>&quot;يتسلّق ☐ التمثال بخطوات مترددة، وينظر إلى الماء المتحرّك تحته. يسمع دقات قلبه. ويبدأ الطنين في أذنيه.&quot;</p><p>&quot;يشعر بشيء يزحف على كتفه، فيفتح عينيه فجأة لتلتقيا بعيني عنكبوت أسود.&quot;</p><p>&quot;في لحظة، يفقد ☐ صوابه ويلقي بنفسه في البحيرة. يدخل الماء إلى أنفه. يحرّك أطرافه بكل قوّته، لكن الماء أقوى منه.&quot;</p><p>&quot;يغمض ☐ عينيه...
-وينتظر أن ينقذه الأخوان.&quot;</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>&quot;عدَّل ☐ التمثال، وبعدها نظر إلى الماء أسفله. يمكنه سماع نبضات قلبه. أذناه بدأت ترن.&quot;</p><p>&quot;شعر أن شيئ ما يتحرك في كتفيه وفتحت عيناه في أرجل منتمية لعنكبوت أسود.&quot;</p><p>&quot;في لمحة عين، خسر ☐ توازنه وأحاسيسه ووقع إلى البحيرة. أنف مملوء بالماء. حاول تحريك جسمه للخروج، لكن الماء أقوى.&quot;</p><p>&quot;غلق ☐ عيناه...
-وانتظر أصدقاؤة لإنقاذه.&quot;</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> هشام يحافظ على تسلّق التمثال، ونظرة العنكبوت، وإلقاء الشخصية نفسها في البحيرة، وانتظار إنقاذ الأخوين.</p>
-</article>
-<article class="card" id="example-9881" data-category="meaning">
-  <header class="card-head">
-    <div><p class="category">المعنى والنبرة</p><h3>ملكية المخبز</h3></div>
-    <a class="entry" href="#example-9881" aria-label="رابط شاهد ملكية المخبز"><bdi>#9881</bdi></a>
-  </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>you know? This bakery belongs to MIKHAEL&#x27;s family.
-I guess you can&#x27;t really tell, because he wears that horrible yellow wig all the time...</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>هل تعلم؟ هذا المخبز ملك لعائلة ميخائيل.
-أظن أن الشبه لا يظهر، لأنه يرتدي ذلك الشعر المستعار الأصفر الفظيع طوال الوقت...</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>هل تعلم أن هذه العائلة تنتمي لميكال؟
-ربما لا ترى ذلك حقاً، لأنه يرتدي تلك الباروكة طوال الوقت...</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> «هذا المخبز ملك لعائلة ميخائيل» تحافظ على معلومة المخبز وصاحبه.</p>
-</article>
-<article class="card" id="example-12615" data-category="meaning">
-  <header class="card-head">
-    <div><p class="category">المعنى والنبرة</p><h3>الخطاب قبل المعركة</h3></div>
-    <a class="entry" href="#example-12615" aria-label="رابط شاهد الخطاب قبل المعركة"><bdi>#12615</bdi>، <bdi>#12618</bdi></a>
-  </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>THE RECYCLEPATH:
-Begone, non-recycler!</p><p>THE RECYCLEPATH:
-Please grant me the power to recycle thy enemies!</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>مختلّ التدوير:
-اغرب عن هنا، يا من لا تعيد التدوير!</p><p>مختلّ التدوير:
-أرجوك، أعطيني القوة لأعيد تدوير أعدائك!</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>مُتبِع إعادة التدوير: \
-ارحل أيها غير القابل لإعادة التدوير!</p><p>مُتبِع إعادة التدوير: \
-امنحيني قوة إعادة تدوير أعدائي!</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> «يا من لا تعيد التدوير» تصف سلوك المخاطَب، و«أعدائك» تحفظ جهة الخطاب في طلب القوة.</p>
-</article>
-<article class="card" id="example-591" data-category="humor">
-  <header class="card-head">
-    <div><p class="category">النكتة والتورية</p><h3>نكتة كتاب الطبخ</h3></div>
-    <a class="entry" href="#example-591" aria-label="رابط شاهد نكتة كتاب الطبخ"><bdi>#591</bdi></a>
-  </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>Ah, that&#x27;s PAPA CHIP&#x27;S CHIP-OFF-THE-OLD-BLOCK COOKBOOK!
-I see you have good taste!</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>آه، هذا كتاب بابا تشيب للطبخ: هذا البسكويت من ذاك العجين!
-أرى أن ذوقك رفيع!</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>أه، هذا &quot;كتاب الطهي هذا الشبل من ذاك الأسد&quot; للأب الرقاقة!!
-أرى أن لديك ذوق رائع!</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> «هذا البسكويت من ذاك العجين» تربط معنى المثل باسم كتاب الطبخ.</p>
-</article>
-<article class="card" id="example-1693" data-category="humor">
-  <header class="card-head">
-    <div><p class="category">النكتة والتورية</p><h3>مزحة القرش</h3></div>
-    <a class="entry" href="#example-1693" aria-label="رابط شاهد مزحة القرش"><bdi>#1693</bdi></a>
-  </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>HERO is, fins down, the best worker I&#x27;ve ever hired in my life.</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>هيرو، وأراهن على ذلك بزعانفي، أفضل موظف وظّفته في حياتي.</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>هيرو، بلا أدنى شك، أفضل موظف وظفته في حياتي.</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> «وأراهن على ذلك بزعانفي» تعيد تورية fins down في كلام القرش.</p>
-</article>
-<article class="card" id="example-3208" data-category="humor">
-  <header class="card-head">
-    <div><p class="category">النكتة والتورية</p><h3>لسان الأفعى</h3></div>
-    <a class="entry" href="#example-3208" aria-label="رابط شاهد لسان الأفعى"><bdi>#3208</bdi></a>
-  </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>I&#x27;m a sssssssnake, but I&#x27;m not toxic!
-On the contrary, I&#x27;m actually quite friendly!</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>أنا أفعى، لكنني لسسسست سامًّا!
-بل على العكس، أنا ودود جدًا!</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>أنا ثعبان سسسسام، لكنني لست سامًا!
-بل على العكس، أنا ودود جدًا!</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> نقل هشام الأزيز إلى «لسسسست» وحافظ على كون الأفعى غير سامة. الآخر أضاف «سسسسام» فناقض الجملة التالية.</p>
-</article>
-<article class="card" id="example-3952" data-category="humor">
-  <header class="card-head">
-    <div><p class="category">النكتة والتورية</p><h3>أبقار البحر</h3></div>
-    <a class="entry" href="#example-3952" aria-label="رابط شاهد أبقار البحر"><bdi>#3952</bdi></a>
-  </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>are so cute! Now that there&#x27;s less SQUIZZARDS on the farm, they&#x27;ll have more room to moo-ve around, hehe.</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>أبقار البحر لطيفة جدًا! الآن وقد قلّت السكويزاردات في المزرعة، صار لديها متّسع لتتموّوّوشّى، ههه.</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>أبقار البحر لطيفة جدًا! والآن بعد أن قلّ عدد السكوِزارد في المزرعة، صار لديها متسع أكبر للموو-حركة، ههه.</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> «تتموّوّوشّى» تدخل خوار البقرة في الفعل العربي، كما يفعل الأصل في moo-ve.</p>
-</article>
-<article class="card" id="example-4979" data-category="humor">
-  <header class="card-head">
-    <div><p class="category">النكتة والتورية</p><h3>خطأ أومولي المقصود</h3></div>
-    <a class="entry" href="#example-4979" aria-label="رابط شاهد خطأ أومولي المقصود"><bdi>#4979</bdi></a>
-  </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>Thabks...</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>شكزًا...</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>شكرًا...</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> «شكزًا» تحافظ على خطأ النطق في Thabks. «شكرًا» تصححه فتختفي سمة الشخصية هنا.</p>
-</article>
-<article class="card" id="example-5800" data-category="humor">
-  <header class="card-head">
-    <div><p class="category">النكتة والتورية</p><h3>سؤال الجبن</h3></div>
-    <a class="entry" href="#example-5800" aria-label="رابط شاهد سؤال الجبن"><bdi>#5800</bdi>، <bdi>#5801</bdi></a>
-  </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>&quot;What do you call cheese that isn&#x27;t yours?&quot;</p><p>&quot;Nacho cheese.&quot;</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>&quot;لماذا لا يدافع الجبن عن نفسه؟&quot;</p><p>&quot;لأنه جبان!&quot;</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>&quot;ماذا تسمي البطاطس التي ليست ملكك؟&quot;</p><p>&quot;بطاطس مسلوقة.&quot;</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> هشام يعوّض جناس Nacho cheese بنكتة «الجبن / جبان» ليظل الجواب مرتبطًا بالسؤال.</p>
-</article>
-<article class="card" id="example-6771" data-category="humor">
-  <header class="card-head">
-    <div><p class="category">النكتة والتورية</p><h3>هتاف هارولد</h3></div>
-    <a class="entry" href="#example-6771" aria-label="رابط شاهد هتاف هارولد"><bdi>#6771</bdi></a>
-  </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>I don&#x27;t know what I&#x27;ve been told...
-SWEETHEART&#x27;s love&#x27;s as good as gold!</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>لا أدري ما الذي قد قيل...
-حب سويتهارت ذهب أصيل!</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>لا أدري ماذا أخبروني به...
-حُب الغالية هي محبة كالذهب!</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> قافية «قيل / أصيل» تؤدي وظيفة القافية الإنجليزية told / gold.</p>
-</article>
-<article class="card" id="example-7869" data-category="humor">
-  <header class="card-head">
-    <div><p class="category">النكتة والتورية</p><h3>برتاقل</h3></div>
-    <a class="entry" href="#example-7869" aria-label="رابط شاهد برتاقل"><bdi>#7869</bdi></a>
-  </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>Oragnes. Oranges but yellow.</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>برتاقل. برتقال، لكنه أصفر.</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>برتقال... برتقال لكنه أصفر.</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> «برتاقل» تحفظ تبديل الحرفين المقصود في Oragnes، ثم يشرح السطر ما المقصود.</p>
-</article>
-<article class="card" id="example-8685" data-category="humor">
-  <header class="card-head">
-    <div><p class="category">النكتة والتورية</p><h3>جماعة التدوير</h3></div>
-    <a class="entry" href="#example-8685" aria-label="رابط شاهد جماعة التدوير"><bdi>#8685</bdi></a>
-  </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>We are RECYCULTISTS, followers of THE HOLY BIN!</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>نحن عبّاد التدوير، أتباع الحاوية المقدسة!</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>نحن أتباع إعادة التدوير، أتباع سلة المهملات المقدسة!</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> «عبّاد التدوير» تحافظ على مزحة خلط التدوير باسم جماعة تعبّدية.</p>
-</article>
-<article class="card" id="example-9040" data-category="humor">
-  <header class="card-head">
-    <div><p class="category">النكتة والتورية</p><h3>مقلب التوأمين</h3></div>
-    <a class="entry" href="#example-9040" aria-label="رابط شاهد مقلب التوأمين"><bdi>#9040</bdi></a>
-  </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>Haha! We got you good, didn&#x27;t we!?</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>هاها! أخفناكم حقًا، أليس كذلك؟!</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>هاها! أمسكنا بك جيدًا، أليس كذلك!؟</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> «أخفناكم» تربط we got you بمقلب التخويف الذي سبق الجملة.</p>
-</article>
-<article class="card" id="example-10449" data-category="humor">
-  <header class="card-head">
-    <div><p class="category">النكتة والتورية</p><h3>أمام الكاميرا</h3></div>
-    <a class="entry" href="#example-10449" aria-label="رابط شاهد أمام الكاميرا"><bdi>#10449</bdi></a>
-  </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>, look! This camera&#x27;s taking live footage of us.
-Say cheese!</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>انظروا! هذه الكاميرا تصوّرنا مباشرة.
-ابتسموا!</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>انظروا! هذه الكاميرا تصوّرنا مباشرة.
-قولوا: جبنة!</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> «ابتسموا» تؤدي طلب المصوّر في Say cheese، وهو المقصود في المشهد.</p>
-</article>
-<article class="card" id="example-11045" data-category="humor">
-  <header class="card-head">
-    <div><p class="category">النكتة والتورية</p><h3>اسما التوأمين</h3></div>
-    <a class="entry" href="#example-11045" aria-label="رابط شاهد اسما التوأمين"><bdi>#11045</bdi></a>
-  </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>Because... I&#x27;m... sniff...
-Looking for my long-lost twin brother... ORAGNE JOE...</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>لأنني... أنا... شهقة...
-أبحث عن أخي التوأم الذي فقدته منذ زمن بعيد... جو البرتاقل...</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>لأنني... أنا... شم...
-أبحث عن أخي التوأم المفقود منذ زمن... أوراغني جو...</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> «البرتقال / البرتاقل» تعيدان قلب الحرفين في اسمي التوأمين، ORANGE وORAGNE.</p>
-</article>
-<article class="card" id="example-11261" data-category="humor">
-  <header class="card-head">
-    <div><p class="category">النكتة والتورية</p><h3>خدعة العملة</h3></div>
-    <a class="entry" href="#example-11261" aria-label="رابط شاهد خدعة العملة"><bdi>#11261</bdi></a>
-  </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>Glad I got your attention! Now... word around here is that CLAMS will soon be obsolete and replaced by a new and better currency called... CLEMS!</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>يسرّني أنني لفتّ انتباهكم! والآن... يُقال هنا إن المحارات ستصبح قريبًا عملة قديمة، وستحلّ محلّها عملة جديدة وأفضل تُدعى... مَخارات!</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>سعيد لأنني حظيت باهتمامكم! والآن... يقول الناس هنا إن العملات الصدفية ستصبح قريبًا بالية وسيستبدل بها نقد جديد وأفضل يُدعى... كليمز!</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> «المحارات / مَخارات» تحفظ التشابه اللفظي بين العملة الأصلية والمزيّفة الذي تقوم عليه الخدعة.</p>
-</article>
-<article class="card" id="example-116" data-category="gameplay">
-  <header class="card-head">
-    <div><p class="category">نصوص اللعب</p><h3>سؤال المصباح</h3></div>
-    <a class="entry" href="#example-116" aria-label="رابط شاهد سؤال المصباح"><bdi>#116</bdi></a>
-  </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>A lightbulb hangs from the ceiling, wherever it is.
-Look into the lightbulb?</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>يتدلّى مصباح من السقف، أينما كان.
-أتريد النظر داخل المصباح؟</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>يتدلى مصباح من السقف، أينما كان</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> هشام يحافظ على السؤال الذي يسبق اختيار النظر داخل المصباح. في الآخر بقي الوصف فقط.</p>
-</article>
-<article class="card" id="example-293" data-category="gameplay">
-  <header class="card-head">
-    <div><p class="category">نصوص اللعب</p><h3>قائمة الحروف</h3></div>
-    <a class="entry" href="#example-293" aria-label="رابط شاهد قائمة الحروف"><bdi>#293</bdi></a>
-  </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>You now have the LETTER CHECKLIST and MAP.</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>حصلت على قائمة الحروف والخريطة.</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>الآن لديك قائمة الرسائل والخريطة.</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> LETTER CHECKLIST قائمة للحروف التي يجمعها اللاعب. «قائمة الرسائل» تسمّي شيئًا مختلفًا.</p>
-</article>
-<article class="card" id="example-2883" data-category="gameplay">
-  <header class="card-head">
-    <div><p class="category">نصوص اللعب</p><h3>اسم شريط الأغاني</h3></div>
-    <a class="entry" href="#example-2883" aria-label="رابط شاهد اسم شريط الأغاني"><bdi>#2883</bdi>، <bdi>#3861</bdi></a>
-  </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>Hurry, OMORI! After her!
-We need that SPECIAL MIXTAPE!</p><p>, OMORI! ROSA has the SPECIAL MIXTAPE! You can&#x27;t let her get away!</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>أسرع يا أوموري! الحق بها!
-نحتاج إلى شريط الأغاني الخاص!</p><p>أسرع يا أوموري! شريط الأغاني الخاص مع روزا! لا تدعها تفلت!</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>أسرع يا أوموري! إلحق بها!
-نحتاج إلى الشريط المميّز!</p><p>أسرع يا أوموري! لدى روزا الشريط المختلط الخاص! لا تدعها تهرب!</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> اسم الغرض ثابت عند هشام بين الحوار وتلميح المهمة. في الآخر يتغير من «الشريط المميّز» إلى «الشريط المختلط الخاص».</p>
-</article>
-<article class="card" id="example-4296" data-category="gameplay">
-  <header class="card-head">
-    <div><p class="category">نصوص اللعب</p><h3>أوراق اللعب</h3></div>
-    <a class="entry" href="#example-4296" aria-label="رابط شاهد أوراق اللعب"><bdi>#4296</bdi>، <bdi>#4297</bdi></a>
-  </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>-oh... My hand doesn&#x27;t look so good.</p><p>can&#x27;t just tell people that, KEL!
-You have to keep a good poker face.</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>أوه... أوراقي لا تبشّر بخير.</p><p>لا يمكنك إخبار الجميع بهذا يا كيل!
+  <div class="quotes"><div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>لا يمكنك أن تقول ذلك للناس هكذا يا كيل!
+عليك أن <mark class="error">تحافظ على وجه بوكر جيد</mark>.</p></div></div>
+<div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>لا يمكنك إخبار الجميع بهذا يا كيل!
 عليك ألا تكشف أوراقك بتعابير وجهك.</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>أوه لا... لا تبدو يدي بخير.</p><p>لا يمكنك أن تقول ذلك للناس هكذا يا كيل!
-عليك أن تحافظ على وجه بوكر جيد.</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> «أوراقي» تؤدي معنى hand في اللعبة، و«ألا تكشف أوراقك بتعابير وجهك» تشرح poker face في السياق.</p>
+<div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>can&#x27;t just tell people that, KEL!
+You have to keep a good poker face.</p></div></div></div>
+  <p class="reason"><strong>موضع الخطأ</strong> العبارة ثقيلة ومبهمة بالعربية. «ألا تكشف أوراقك بتعابير وجهك» توضّح المقصود.</p>
+  
 </article>
-<article class="card" id="example-4870" data-category="gameplay">
+<article class="card" id="example-5286-a29e67e5" data-case="example-5286-a29e67e5" data-category="grammar">
   <header class="card-head">
-    <div><p class="category">نصوص اللعب</p><h3>من يستعيد نقاطه؟</h3></div>
-    <a class="entry" href="#example-4870" aria-label="رابط شاهد من يستعيد نقاطه؟"><bdi>#4870</bdi></a>
+    <div><p class="category">نحو</p><h3>مخاطبة أوبري</h3></div>
+    <a class="entry" href="#example-5286-a29e67e5" aria-label="رابط الشاهد"><bdi>#5286</bdi></a>
   </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>HERO calls AUBREY. AUBREY attacks, then HERO heals 40% of AUBREY&#x27;s HEART and 20% of AUBREY&#x27;s JUICE with words of encouragement.</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>ينادي هيرو أوبري. تهاجم أوبري، ثم يعيد لها هيرو 40% من قلبها و20% من عصيرها بكلمات مشجّعة.</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>ينادي هيرو أوبري. تهاجم أوبري، ثم يستعيد هيرو 40% من قلب أوبري و20% من عصارتها بكلمات التشجيع.</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> هشام يوضح أن هيرو يعيد نقاط القلب والعصير إلى أوبري. «يستعيد هيرو» توحي بأن هيرو هو من يحصل عليها.</p>
+  <div class="quotes"><div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p><mark class="error">أكنت تريد</mark> العودة يا أوبري؟</p></div></div>
+<div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>هل تريدين العودة يا أوبري؟</p></div></div>
+<div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>you want to head back, AUBREY?</p></div></div></div>
+  <p class="reason"><strong>موضع الخطأ</strong> الكلام موجّه لأوبري. يُؤنّث الفعل «تريدين».</p>
+  
 </article>
-<article class="card" id="example-6424" data-category="gameplay">
+<article class="card" id="example-5316-26f20f38" data-case="example-5316-26f20f38" data-category="grammar">
   <header class="card-head">
-    <div><p class="category">نصوص اللعب</p><h3>رسالة المحارات والصخرة الحكيمة</h3></div>
-    <a class="entry" href="#example-6424" aria-label="رابط شاهد رسالة المحارات والصخرة الحكيمة"><bdi>#6424</bdi>، <bdi>#6425</bdi>، <bdi>#6430</bdi></a>
+    <div><p class="category">نحو</p><h3>مخاطبة كيل</h3></div>
+    <a class="entry" href="#example-5316-26f20f38" aria-label="رابط الشاهد"><bdi>#5316</bdi></a>
   </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>You don&#x27;t have enough CLAMS.</p><p>, I&#x27;m the WISE ROCK!
-I give solid advice in exchange for CLAMS!</p><p>Yell ALL THE TIME!!!!</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>ليس لديك ما يكفي من المحارات.</p><p>مرحبًا، أنا الصخرة الحكيمة!
-أقدّم نصائح صلبة مقابل المحارات!</p><p>اصرخ طوال الوقت كله!!!!</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>بالفعل</p><p>ليس لديك ما يكفي من المحارات.</p><p>القيام بأي شيء هو خير طالما ألا يُقبض عليك!</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> في الآخر انتقلت رسالة نقص المحارات إلى تحية الصخرة، وزاحت الترجمات إلى المدخل التالي حتى غاب نص الصرخة. هشام أبقى الرسائل في مواضعها.</p>
+  <div class="quotes"><div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>ماذا <mark class="error">تفعلين</mark> يا كيل؟</p></div></div>
+<div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>ماذا تفعل يا كيل؟</p></div></div>
+<div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>doin&#x27;, KEL?</p></div></div></div>
+  <p class="reason"><strong>موضع الخطأ</strong> الكلام موجّه لكيل. صيغة المخاطب هنا «تفعل».</p>
+  
 </article>
-<article class="card" id="example-9612" data-category="gameplay">
+<article class="card" id="example-5609-47e62f56" data-case="example-5609-47e62f56" data-category="style">
   <header class="card-head">
-    <div><p class="category">نصوص اللعب</p><h3>مربعات الأسماء المخفية</h3></div>
-    <a class="entry" href="#example-9612" aria-label="رابط شاهد مربعات الأسماء المخفية"><bdi>#9612</bdi>، <bdi>#9613</bdi></a>
+    <div><p class="category">صياغة</p><h3>تركيب الجملة</h3></div>
+    <a class="entry" href="#example-5609-47e62f56" aria-label="رابط الشاهد"><bdi>#5609</bdi></a>
   </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>&quot;Planks of wood were strewn about the area.
-Paint stains blotched the grass thanks to ☐☐☐☐☐ and ☐☐☐☐☐☐&#x27;s work.&quot;</p><p>&quot;All day, ☐ watched ☐☐☐☐ lug planks of wood back and forth from his dad&#x27;s pickup truck.&quot;</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>&quot;تناثرت الألواح الخشبية في كل مكان.
-وتلطّخ العشب بالطلاء بفضل عمل ☐☐☐☐☐ و☐☐☐☐☐☐.&quot;</p><p>&quot;طوال اليوم، راقب ☐ ☐☐☐☐ وهو ينقل ألواح الخشب الثقيلة ذهابًا وإيابًا من شاحنة أبيه الصغيرة.&quot;</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>&quot;ألواح خشب كانت متناثرة في كل أنحاء الفناء.
-بسبب الطلاء، أصبح العشب بألوان متعددة بفضل عمل ☐☐☐☐ و☐☐☐☐☐.&quot;</p><p>&quot;طول اليوم، شاهد ☐☐☐☐ يقوم بتدخيل ألواح الخشب مراراً وتكراراً من شاحنة أبيه.&quot;</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> هشام يطابق عدد المربعات في الأصل. الآخر يقلّص مجموعتي المربعات ويحذف مربع الشخصية التي تراقب في السطر التالي.</p>
+  <div class="quotes"><div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>أخبرتنا أمي ألا نذهب بعيداً عن الكهف وإلا سيبتلعنا الشق المظلم... قالت إن <mark class="error">هذا ما يختفون إليه الأطفال المشاكسون</mark>.</p></div></div>
+<div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>تقول لنا أمّي ألّا نبتعد عن الكهف، وإلا ستبتلعنا الهوة المظلمة... وتقول إن كل الأطفال المشاغبين ينتهي بهم المطاف هناك.</p></div></div>
+<div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>Mom tells us not to walk too far from the cave or else we&#x27;ll be swallowed by the SHADOWY CHASM... She says that&#x27;s where all the bad kids go.</p></div></div></div>
+  <p class="reason"><strong>موضع الخطأ</strong> اضطرب تركيب الفعل والفاعل وحرف الجر. صياغة هشام «ينتهي بهم المطاف هناك» توضح وجهة الأطفال.</p>
+  
 </article>
-<article class="card" id="example-9595" data-category="gameplay">
+<article class="card" id="example-5628-e1541885" data-case="example-5628-e1541885" data-category="spelling">
   <header class="card-head">
-    <div><p class="category">نصوص اللعب</p><h3>مقتطف المكتبة</h3></div>
-    <a class="entry" href="#example-9595" aria-label="رابط شاهد مقتطف المكتبة"><bdi>#9595</bdi></a>
+    <div><p class="category">إملاء</p><h3>كتابة «كذلك»</h3></div>
+    <a class="entry" href="#example-5628-e1541885" aria-label="رابط الشاهد"><bdi>#5628</bdi></a>
   </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>You find a book of interest. Read an excerpt?</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>تعثر على كتاب يثير اهتمامك. هل تقرأ مقتطفًا منه؟</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>وجدت كتاباً ذا أهمية. أتريد قراءة ملخصه؟</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> يعرض التفاعل قراءة مقتطف من الكتاب. «ملخّصه» يعد اللاعب بنوع آخر من النص.</p>
+  <div class="quotes"><div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>تفصل!
+أنت متعلم سريع أليس <mark class="error">كذالك</mark>؟</p></div></div>
+<div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>هكذا! أحسنت يا صاح!
+أنت سريع التعلّم، صحيح؟</p></div></div>
+<div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>There you go! Right on, brother!
+You&#x27;re a quick learner, aren&#x27;t you?</p></div></div></div>
+  <p class="reason"><strong>موضع الخطأ</strong> تُكتب «كذلك» من دون ألف بعد الذال.</p>
+  
 </article>
-<article class="card" id="example-10736" data-category="gameplay">
+<article class="card" id="example-5630-aab4976a" data-case="example-5630-aab4976a" data-category="spelling">
   <header class="card-head">
-    <div><p class="category">نصوص اللعب</p><h3>قطع آلة القهوة</h3></div>
-    <a class="entry" href="#example-10736" aria-label="رابط شاهد قطع آلة القهوة"><bdi>#10736</bdi></a>
+    <div><p class="category">إملاء</p><h3>اسم الإشارة</h3></div>
+    <a class="entry" href="#example-5630-aab4976a" aria-label="رابط الشاهد"><bdi>#5630</bdi></a>
   </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>old COFFEE MACHINE broke like forever ago, but I&#x27;ve been too busy to gather the missing parts.</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>تعطلت آلة القهوة القديمة لدي منذ زمن طويل، لكنني كنت مشغولة جدًا فلم أجمع القطع الناقصة.</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>آلة القهوة القديمة تعطلت منذ دهر، لكنني كنت مشغولة جدًا بجمع القطع المفقودة.</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> سبب المهمة أنها كانت مشغولة فلم تجمع القطع. الآخر يقول إنها كانت مشغولة بجمعها.</p>
+  <div class="quotes"><div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p><mark class="error">هاذا</mark> داينو-مؤكد!</p></div></div>
+<div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>وهذا ضمان دينو!</p></div></div>
+<div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>THAT&#x27;S A DINO-GUARANTEE!</p></div></div></div>
+  <p class="reason"><strong>موضع الخطأ</strong> تُكتب «هذا».</p>
+  
 </article>
-<article class="card" id="example-12256" data-category="gameplay">
+<article class="card" id="example-6044-8c016295" data-case="example-6044-8c016295" data-category="spelling">
   <header class="card-head">
-    <div><p class="category">نصوص اللعب</p><h3>اختبار القواعد</h3></div>
-    <a class="entry" href="#example-12256" aria-label="رابط شاهد اختبار القواعد"><bdi>#12256</bdi>، <bdi>#12257</bdi>، <bdi>#12258</bdi>، <bdi>#12259</bdi></a>
+    <div><p class="category">إملاء</p><h3>التحية</h3></div>
+    <a class="entry" href="#example-6044-8c016295" aria-label="رابط الشاهد"><bdi>#6044</bdi></a>
   </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>Which one of these sentences is written correctly?</p><p>A) “Eggplants taste better when it is cooked.”</p><p>B) “It is definitely tastiest than tofu.”</p><p>C) “I think eggplant is the better tasting soft vegetable.”</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>أيّ الجمل التالية مكتوبة بشكل صحيح؟</p><p>أ) «الباذنجان ألذ حين تكون مطبوخة.»</p><p>ب) «إنه بالتأكيد الألذ من توفو.»</p><p>ج) «أظن أن الباذنجان ألذّ الخضروات الطرية.»</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>أي جملة من هذه الجمل مكتوبة بصورة صحيحة؟</p><p>A) “طعم الباذنجان أفضل عندما يُطهى.”</p><p>B) “إنه بالتأكيد ألذ من التوفو.”</p><p>C) “أظن أن الباذنجان هو الخضار الطرية الأفضل مذاقًا.”</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> هشام أبقى الخطأين المقصودين في الخيارين الأولين. الآخر صحّحهما فأصبح أكثر من جواب مقبولًا.</p>
+  <div class="quotes"><div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p><mark class="error">رحبًا</mark> بك إلى غابة التيهحيث تجد اشياءً لم تكن تعلم أنها ضائعة في المقام الأول... أو ربما أنها منسية لسبَ</p></div></div>
+<div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>أهلًا بك في الغابة الضائعة، حيث تجد أشياء لم تكن تعلم أنها ضاعت أصلًا... أو لعلّها نُسيت لسبب ما.</p></div></div>
+<div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>Welcome to the LOST FOREST, where you find things you never knew were lost in the first place... Or perhaps they&#x27;re forgotten for a reason.</p></div></div></div>
+  <p class="reason"><strong>موضع الخطأ</strong> سقط حرف الميم من التحية «مرحبًا».</p>
+  
 </article>
-<article class="card" id="example-790" data-category="details">
+<article class="card" id="example-6151-a6e5a4f4" data-case="example-6151-a6e5a4f4" data-category="spelling">
   <header class="card-head">
-    <div><p class="category">تفاصيل النص</p><h3>اسم اللاعب في الحوار</h3></div>
-    <a class="entry" href="#example-790" aria-label="رابط شاهد اسم اللاعب في الحوار"><bdi>#790</bdi></a>
+    <div><p class="category">إملاء</p><h3>اسم الإشارة للجمع</h3></div>
+    <a class="entry" href="#example-6151-a6e5a4f4" aria-label="رابط الشاهد"><bdi>#6151</bdi></a>
   </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>Hold up one sec, \n[8]. I think I have an idea!</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>انتظر لحظة يا \n[8]. أظن أن لدي فكرة!</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>انتظر قليلاً، [8].أعتقد أن لدي فكرة!</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> أبقى هشام متغير اسم اللاعب كما ورد في الأصل. الآخر استبدله بالرقم [8] بين قوسين.</p>
+  <div class="quotes"><div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>هذا المكان ليس جيداً كما يقولونه <mark class="error">أولائك</mark> التماسيح الاغبياء. أريد استرجاع محاراتي، أتسمعني!؟</p></div></div>
+<div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>هذا المكان ليس كما يروّجون له. أريد استعادة محاراتي، أتسمعون؟!</p></div></div>
+<div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>This joint just ain&#x27;t cut out like these folks are making it out to be. I want my CLAMS back, ya hear!?</p></div></div></div>
+  <p class="reason"><strong>موضع الخطأ</strong> الصواب «أولئك».</p>
+  
 </article>
-<article class="card" id="example-2418" data-category="details">
+<article class="card" id="example-6309-0ebe9043" data-case="example-6309-0ebe9043" data-category="style">
   <header class="card-head">
-    <div><p class="category">تفاصيل النص</p><h3>اعتذار أوبري</h3></div>
-    <a class="entry" href="#example-2418" aria-label="رابط شاهد اعتذار أوبري"><bdi>#2418</bdi></a>
+    <div><p class="category">صياغة</p><h3>تكرار كلمة</h3></div>
+    <a class="entry" href="#example-6309-0ebe9043" aria-label="رابط الشاهد"><bdi>#6309</bdi></a>
   </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>I&#x27;m so sorry, BASIL. Please forgive me...</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>أنا آسفة جدًا يا بازل. أرجوك سامحني...</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>كم أنا آسف، يا باسيل. أرجوك سامحني...</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> «أنا آسفة» توافق المتكلمة أوبري، بينما «أنا آسف» تذكّر الاعتذار.</p>
+  <div class="quotes"><div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>سمعت أن القبطان قرر فجأةً أنه لن يسافر في أحوال الفضاء بعد الأن، لذا نصف من طاقم القبطان قاموا بأخذ <mark class="error">السفينة السفينة</mark> ورحلوا!</p></div></div>
+<div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>سمعت أن القبطان قرر فجأة التوقف عن السفر، فأخذ نصف الطاقم سفينته ورحلوا!</p></div></div>
+<div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>I hear that the CAPTAIN suddenly decided he wasn&#x27;t going to travel anymore, so half of the crew took his ship and left!</p></div></div></div>
+  <p class="reason"><strong>موضع الخطأ</strong> تكررت كلمة «السفينة» متتالية بلا وظيفة في الجملة.</p>
+  
 </article>
-<article class="card" id="example-7408" data-category="details">
+<article class="card" id="example-6554-4bfb8354" data-case="example-6554-4bfb8354" data-category="grammar">
   <header class="card-head">
-    <div><p class="category">تفاصيل النص</p><h3>تحية في الكهف</h3></div>
-    <a class="entry" href="#example-7408" aria-label="رابط شاهد تحية في الكهف"><bdi>#7408</bdi></a>
+    <div><p class="category">نحو</p><h3>مطابقة النعت للمنعوت</h3></div>
+    <a class="entry" href="#example-6554-4bfb8354" aria-label="رابط الشاهد"><bdi>#6554</bdi></a>
   </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>Oh hi, HERO! I almost didn&#x27;t recognize you.
-It&#x27;s just so dark in this cave.</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>أوه، مرحبًا يا هيرو! كدت لا أتعرّف عليك.
-فهذا الكهف مظلم جدًا.</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>لطالما أردت أن أشكرك على الوقت الذي أمضيته في مرافقتي عبر التضاريس الخطرة حين طلبت منك ذلك.
-تفضل! خذ هذا!</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> هشام يحتفظ بتحية باتزي وسبب عدم تعرفه على هيرو فورًا. الآخر يضع في الموضع رسالة الشكر من المدخل التالي.</p>
+  <div class="quotes"><div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>سمعت أن بيرلي أصبحت رئيسة الأمن!
+قالوا أن لديها <mark class="error">شفها علوي متصلب</mark>!</p></div></div>
+<div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>سمعت أنهم عيّنوا بيرلي رئيسة للأمن!
+يقولون إنها لا تهتز أمام شيء!</p></div></div>
+<div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>I heard they made BERLY head of security!
+They say she&#x27;s got a stiff upper lip!</p></div></div></div>
+  <p class="reason"><strong>موضع الخطأ</strong> «شفة» مؤنثة، والصيغة السليمة «شفةٌ علويةٌ متصلّبةٌ».</p>
+  
 </article>
-<article class="card" id="example-8976" data-category="details">
+<article class="card" id="example-8076-ce6d5784" data-case="example-8076-ce6d5784" data-category="grammar">
   <header class="card-head">
-    <div><p class="category">تفاصيل النص</p><h3>وصف الأصابع</h3></div>
-    <a class="entry" href="#example-8976" aria-label="رابط شاهد وصف الأصابع"><bdi>#8976</bdi></a>
+    <div><p class="category">نحو</p><h3>المذكّر والمؤنّث في الجملة نفسها</h3></div>
+    <a class="entry" href="#example-8076-ce6d5784" aria-label="رابط الشاهد"><bdi>#8076</bdi></a>
   </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>Little brother... Please, look at me... I am worried about you... Your eyes are swollen and your fingers are bruised...
-Let me take care of you...</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>أخي الصغير... أرجوك، انظر إليّ... أخشى عليك... عيناك متورّمتان وأصابعك مكدومة...
-دعني أعتني بك...</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>أخي الصغير... أرجوك، أنظر إلي... أنا قلقة عليك... جفونك منتفخة وأصابعك متيبسة... دعني أعتني بك...</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> «أصابعك مكدومة» تحفظ الإصابة المذكورة في الأصل. «متيبسة» تصف عرضًا مختلفًا.</p>
+  <div class="quotes"><div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p><mark class="error">لا تكن سخيفًا</mark> يا أوبري. بالطبع تستحقين.</p></div></div>
+<div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>لا تقولي هذا يا أوبري. بالطبع تستحقين.</p></div></div>
+<div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>&#x27;t be silly, AUBREY. Of course you do.</p></div></div></div>
+  <p class="reason"><strong>موضع الخطأ</strong> خاطب أوبري بالمذكّر هنا، ثم عاد إلى المؤنّث في «تستحقين».</p>
+  
 </article>
-<article class="card" id="example-9297" data-category="details">
+<article class="card" id="example-9662-26fe0b58" data-case="example-9662-26fe0b58" data-category="style">
   <header class="card-head">
-    <div><p class="category">تفاصيل النص</p><h3>وصف الحلوى</h3></div>
-    <a class="entry" href="#example-9297" aria-label="رابط شاهد وصف الحلوى"><bdi>#9297</bdi></a>
+    <div><p class="category">صياغة</p><h3>التعبير عن الارتياح</h3></div>
+    <a class="entry" href="#example-9662-26fe0b58" aria-label="رابط الشاهد"><bdi>#9662</bdi></a>
   </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>The CANDY had a chewy texture and fruity flavor.</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>كانت حلوى مطاطية القوام وبنكهة الفاكهة.</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>كان ملمس الـحلوى مطاطي وبطعم جذاب.</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> يحافظ هشام على القوام المطاطي ونكهة الفاكهة. الآخر يستبدل نكهة الفاكهة بمدح الطعم عمومًا.</p>
-</article>
-<article class="card" id="example-6122" data-category="details">
-  <header class="card-head">
-    <div><p class="category">تفاصيل النص</p><h3>استلام جائزة بيرلي</h3></div>
-    <a class="entry" href="#example-6122" aria-label="رابط شاهد استلام جائزة بيرلي"><bdi>#6122</bdi></a>
-  </header>
-  <div class="quotes">
-    <div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>You got a BUTT CERTIFICATE.</p></div></div>
-    <div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>حصلت على شهادة المؤخرة.</p></div></div>
-    <div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>حصلت على شهادة الرأس الصلبة. (يحتاج اعادة ترجمة في التدقيق)</p></div></div>
-  </div>
-  <p class="reason"><strong>سبب الترجيح</strong> «شهادة المؤخرة» تحفظ الدعابة في اسم الجائزة. الآخر يترك ملاحظة تحريرية داخل رسالة الاستلام.</p>
-</article>
-      </div>
+  <div class="quotes"><div class="quote quote-a"><h4>التعريب الآخر</h4><div class="lines"><p>هممم... يا ترى ماذا يفعل هذا الأحمق الآن؟
+... هه... <mark class="error">تخلصٌ جيد</mark>!</p></div></div>
+<div class="quote quote-h"><h4>تعريب هشام</h4><div class="lines"><p>يا ترى، ماذا يفعل ذلك الأحمق الآن؟
+... حسنًا... ارتحنا منه!</p></div></div>
+<div class="quote quote-en"><h4>الأصل الإنجليزي</h4><div class="lines" lang="en" dir="ltr"><p>wonder what that moron is up to now?
+... Eh... Good riddance!</p></div></div></div>
+  <p class="reason"><strong>موضع الخطأ</strong> العبارة ثقيلة في كلام شخصية مرتاحة إلى غياب أحدهم. «ارتحنا منه» تؤدي المعنى بسلاسة.</p>
+  
+</article></div>
       <p id="empty" class="empty" hidden>ما لقينا شواهد بهذا البحث.</p>
     </section>
-
     <section id="method" class="method" aria-labelledby="method-title">
       <div>
         <h2 id="method-title">كيف حسبنا النسبة؟</h2>
-        <p>طابقنا المدخلات برقمها ومفتاحها في الملفات الثلاثة. بلغ التطابق الحرفي <strong><bdi>6.95%</bdi></strong> عندما تساوى نص المدخل كاملًا، بما فيه علامات الترقيم ورموز العرض.</p>
+        <p>طابقنا المدخلات برقمها ومفتاحها في الملفات الثلاثة. بلغ التطابق الحرفي <strong><bdi>6.95%</bdi></strong> عندما تساوى نص المدخل كاملًا بما فيه علامات الترقيم ورموز العرض.</p>
         <p>وبعد حذف رموز العرض ووسوم المتحدثين وتوحيد المسافات، تطابق <strong><bdi>1,392</bdi> من <bdi>12,816</bdi></strong> مدخلًا فيه نص عربي في النسختين، أي <strong><bdi>10.86%</bdi></strong>.</p>
-        <p class="section-note">شمل حساب النسبة الملفات كاملة. الشواهد مختارة من مراجعة لغوية على عشر دفعات. تعرض البطاقات النص المقروء، مع إظهار رمز اسم اللاعب حيث يؤثر في المقارنة.</p>
       </div>
       <a href="#main">أعلى الصفحة ↑</a>
     </section>
   </main>
-  <footer class="footer shell">مقارنة نصوص أوموري <bdi lang="en">OMORI</bdi></footer>
 </body>
 </html>
-

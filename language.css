@@ -1,0 +1,13 @@
+.quote-a { background: #231923; border-color: #674056; }
+.quote-a h4 { color: #f9bfd6; }
+.quote .error {
+  color: #ffedf4;
+  background: #7f2e54;
+  border-bottom: 2px solid #ffa7cb;
+  border-radius: .23rem;
+  padding-inline: .22em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  font-weight: 700;
+}
+.examples + .method { margin-bottom: 3rem; }
