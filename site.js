@@ -32,7 +32,7 @@ function update() {
     if (matches) visible += 1;
   }
 
-  count.value = `${visible} من ${cards.length} شاهدًا`;
+  count.value = `${visible} من ${cards.length} مثالًا`;
   empty.hidden = visible > 0;
 }
 

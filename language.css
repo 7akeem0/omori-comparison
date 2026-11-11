@@ -33,3 +33,11 @@
   .translation-controls .search input { width: 100%; }
   .translation-rows { scroll-margin-top: 8rem; }
 }
+
+.hero-copy > .primary-link { margin-top: 1.45rem; }
+.examples .quote { background: #1d1727; border-color: #45364f; }
+.examples .quote h4 { color: var(--accent); }
+.examples .quote .error { color: var(--ink); background: #514064; border-bottom-color: #b6a0d4; }
+@media (min-width: 761px) {
+  .examples .quotes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
