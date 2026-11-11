@@ -5,21 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#100e16">
-  <meta name="review-version" content="53b5e7cbe9cf6dd31d2e8f0d974208710483083ecb8abd0a349c144219e84649">
+  <meta name="review-version" content="e7ecba4f0f5d7edfe51955f4351d56cf69068e37b6671c5c409628bcf8275bd2">
   <meta name="description" content="مقارنة الأخطاء الإملائية والنحوية والصياغة العربية في تعريبي أوموري.">
   <title>مقارنة تعريبي أوموري</title>
   <link rel="icon" type="image/webp" href="./omori.webp">
   <link rel="stylesheet" href="./site.css">
-  <link rel="stylesheet" href="./language.css?v=3e679c56d8f7">
+  <link rel="stylesheet" href="./language.css?v=71cc8d64e24a">
   <script src="./site.js" defer></script>
-  <script type="module" src="./translation-reader.js?v=65e0099cc30d"></script>
 </head>
 <body>
   <a class="skip" href="#main">تخطّ إلى المحتوى</a>
   <header class="header">
     <div class="shell header-inner">
       <a class="wordmark" href="./" lang="en" dir="ltr">OMORI<span> / </span>AR</a>
-      <nav aria-label="أقسام الصفحة"><a href="#examples">الشواهد</a><a href="#method">طريقة الحساب</a><a href="#translation">النص الكامل</a></nav>
+      <nav aria-label="أقسام الصفحة"><a href="#examples">الشواهد</a><a href="#method">طريقة الحساب</a><a href="#translation">المقارنة الكاملة</a></nav>
     </div>
   </header>
   <main id="main" class="shell">
@@ -276,26 +275,12 @@ They say she&#x27;s got a stiff upper lip!</p></div></div></div>
       </div>
       <a href="#main">أعلى الصفحة ↑</a>
     </section>
-    <section id="translation" class="translation" aria-labelledby="translation-title">
-      <div class="translation-heading">
-        <div>
-          <h2 id="translation-title">النص الكامل للتعريب الآلي</h2>
-          <p class="section-note"><bdi>13,162</bdi> مدخلًا بالترتيب الأصلي.</p>
-        </div>
-        <a class="translation-download" href="./machine-translation.txt?v=28615139e77d" download="omori-machine-translation.txt">تحميل النص الكامل (TXT)</a>
+    <section id="translation" class="translation-link" aria-labelledby="translation-title">
+      <div>
+        <h2 id="translation-title">المقارنة الكاملة</h2>
+        <p class="section-note">تصفّح التعريبين والأصل الإنجليزي جنبًا إلى جنب في <bdi>13,162</bdi> مدخلًا.</p>
       </div>
-      <details id="translation-reader" class="translation-reader" data-source="./machine-translation.txt?v=28615139e77d" data-count="13162">
-        <summary>تصفّح النص الكامل</summary>
-        <div class="translation-controls">
-          <label class="search"><span class="sr-only">ابحث في النص الكامل</span><input type="search" id="translation-search" placeholder="ابحث بكلمة أو رقم المدخل" disabled></label>
-          <output id="translation-status" role="status"></output>
-        </div>
-        <ol id="translation-rows" class="translation-rows" tabindex="-1" aria-label="مدخلات التعريب الآلي"></ol>
-        <div class="translation-pagination">
-          <button type="button" id="translation-prev" disabled>السابق</button>
-          <button type="button" id="translation-next" disabled>التالي</button>
-        </div>
-      </details>
+      <a class="primary-link" href="./full-comparison.html">عرض المقارنة الكاملة <span aria-hidden="true">←</span></a>
     </section>
   </main>
 </body>

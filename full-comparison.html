@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#100e16">
+  <meta name="description" content="قارن النص الإنجليزي والتعريبين الكاملين لأوموري مدخلًا بمدخل.">
+  <title>المقارنة الكاملة لنصوص أوموري</title>
+  <link rel="icon" type="image/webp" href="./omori.webp">
+  <link rel="stylesheet" href="./site.css">
+  <link rel="stylesheet" href="./language.css?v=71cc8d64e24a">
+  <script type="module" src="./translation-reader.js?v=12373543cf02"></script>
+</head>
+<body>
+  <a class="skip" href="#main">تخطّ إلى المحتوى</a>
+  <header class="header">
+    <div class="shell header-inner">
+      <a class="wordmark" href="./" lang="en" dir="ltr">OMORI<span> / </span>AR</a>
+      <nav aria-label="روابط المقارنة"><a href="./#examples">العودة إلى الشواهد</a></nav>
+    </div>
+  </header>
+  <main id="main" class="shell full-comparison">
+    <h1>المقارنة الكاملة لنصوص أوموري</h1>
+    <p class="intro">الأصل الإنجليزي والتعريبان في <bdi>13,162</bdi> مدخلًا متقابلًا.</p>
+    <section id="translation-reader" aria-label="مدخلات المقارنة" data-count="13162"
+      data-english="./english.txt?v=31cb0bd887ad" data-machine="./machine-translation.txt?v=28615139e77d"
+      data-other="./other-translation.txt?v=407d1eb62c1a">
+      <div class="translation-controls">
+        <label class="search">
+          <span class="sr-only">ابحث في النصوص الثلاثة</span>
+          <input type="search" id="translation-search" placeholder="ابحث بكلمة أو رقم المدخل" disabled>
+        </label>
+        <output id="translation-status" role="status">جارٍ تحميل النصوص…</output>
+        <div class="translation-pagination" role="group" aria-label="التنقل بين صفحات النصوص">
+          <button type="button" id="translation-prev" disabled>السابق</button>
+          <button type="button" id="translation-next" disabled>التالي</button>
+          <button type="button" id="translation-retry" hidden>إعادة المحاولة</button>
+        </div>
+      </div>
+      <ol id="translation-rows" class="translation-rows" tabindex="-1" aria-label="النصوص المتقابلة"></ol>
+      <noscript>
+        <p>فعّل JavaScript للتصفّح جنبًا إلى جنب، أو افتح الملفات النصية.</p>
+        <ul>
+          <li><a href="./english.txt">الأصل الإنجليزي</a></li>
+          <li><a href="./machine-translation.txt">تعريب آلي</a></li>
+          <li><a href="./other-translation.txt">التعريب الآخر</a></li>
+        </ul>
+      </noscript>
+    </section>
+  </main>
+</body>
+</html>

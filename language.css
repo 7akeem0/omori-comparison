@@ -12,25 +12,24 @@
 }
 .examples + .method { margin-bottom: 3rem; }
 
-.translation { margin-block: 0 3rem; scroll-margin-top: 2rem; }
-.translation-heading { display: flex; justify-content: space-between; align-items: center; gap: .7rem 1rem; flex-wrap: wrap; margin-bottom: .9rem; }
-.translation-download { color: var(--accent); font-size: .8rem; text-underline-offset: .2rem; }
-.translation-reader { border: 1px solid var(--line); background: var(--panel); border-radius: 1rem; }
-.translation-reader summary { cursor: pointer; padding: .9rem 1.05rem; color: var(--ink); font-size: .9rem; font-weight: 700; }
-.translation-reader[open] summary { border-bottom: 1px solid var(--line); }
-.translation-controls, .translation-pagination { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; padding: .8rem 1rem; }
-.translation-controls { justify-content: space-between; }
+.translation-link { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-block: 0 3rem; padding: 1.35rem; border: 1px solid var(--line); border-radius: 1rem; background: var(--panel); scroll-margin-top: 2rem; }
+.full-comparison { padding-block: 2.8rem 3rem; }
+.full-comparison h1 { font-size: clamp(1.85rem, 4.8vw, 3.5rem); }
+.full-comparison .intro { margin-block: .65rem 1.3rem; }
+.translation-controls { position: sticky; top: 0; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: .6rem; flex-wrap: wrap; padding: .75rem .9rem; margin-bottom: .85rem; background: var(--panel); border: 1px solid var(--line); border-radius: .8rem; }
 .translation-controls output { color: var(--muted); font-size: .8rem; }
-.translation-rows { list-style: none; margin: 0; padding: 0 1rem; scroll-margin-top: .8rem; }
-.translation-rows li { display: grid; grid-template-columns: 4.6rem minmax(0, 1fr); gap: .45rem; border-top: 1px solid var(--line); padding: .55rem 0; }
-.translation-rows bdi { color: var(--accent); font: 600 .78rem/1.9 var(--latin); }
-.translation-rows p { white-space: pre-line; overflow-wrap: anywhere; font-size: .82rem; }
+.translation-pagination { display: flex; gap: .45rem; align-items: center; flex-wrap: wrap; }
 .translation-pagination button { border: 1px solid var(--line); border-radius: .55rem; background: var(--panel-light); color: var(--ink); padding: .3rem .75rem; font-size: .78rem; }
 .translation-pagination button:disabled { opacity: .55; cursor: default; }
-@media (max-width: 480px) {
-  .translation-rows li { grid-template-columns: 3.3rem minmax(0, 1fr); }
-}
-
+.translation-rows { display: grid; gap: .65rem; list-style: none; margin: 0; padding: 0; scroll-margin-top: 6rem; }
+.translation-row { padding: .6rem 0 .75rem; }
+.translation-entry { display: block; padding: 0 1rem .4rem; }
+.translation-label { color: var(--muted); font-size: .72rem; font-weight: 650; letter-spacing: normal; margin-bottom: .5rem; padding-bottom: .4rem; border-bottom: 1px solid #ffffff14; }
+.translation-row .quote-a { background: #14111b; border-color: #32293d; }
+.translation-row .quote-h .translation-label { color: var(--accent); }
 @media (max-width: 480px) {
   .header nav { flex-wrap: wrap; justify-content: flex-end; gap: .2rem .65rem; }
+  .translation-controls .search { width: 100%; }
+  .translation-controls .search input { width: 100%; }
+  .translation-rows { scroll-margin-top: 8rem; }
 }

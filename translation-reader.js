@@ -4,11 +4,16 @@ const rows = reader.querySelector("#translation-rows");
 const status = reader.querySelector("#translation-status");
 const previous = reader.querySelector("#translation-prev");
 const next = reader.querySelector("#translation-next");
-const pageSize = 50;
-let entries;
+const retry = reader.querySelector("#translation-retry");
+const columns = [
+  { key: "english", label: "الأصل الإنجليزي", className: "quote-en", lang: "en", direction: "ltr" },
+  { key: "machine", label: "تعريب آلي", className: "quote-h", lang: "ar", direction: "rtl" },
+  { key: "other", label: "التعريب الآخر", className: "quote-a", lang: "ar", direction: "rtl" },
+];
+const pageSize = 30;
+let entries = [];
 let results = [];
 let page = 0;
-let loading = false;
 
 function normalize(text) {
   return text.toLowerCase().normalize("NFKD").replace(/\p{Mark}|ـ/gu, "")
@@ -17,42 +22,64 @@ function normalize(text) {
     .replace(/\s+/g, " ").trim();
 }
 
-function readable(text) {
-  return text.replace(/\\n\[8\]/gi, "[اسم اللاعب]")
+function readable(text, lang) {
+  return text.replace(/\\n\[8\]/gi, lang === "en" ? "[Player name]" : "[اسم اللاعب]")
     .replace(/<br\s*\/?>|\\n(?![a-z\[<])/gi, "\n")
     .replace(/\\(?:[a-z]+(?:\[[^\]\r\n]*\]|<[^>\r\n]*>)?|[!.|^{}<>$])/gi, "")
     .replace(/\\(["'#])/g, "$1")
     .trim() || text;
 }
 
-function parse(text) {
-  const headers = [...text.matchAll(/^(\d+)\) \[[^\r\n]+\]\r?$/gm)];
+async function loadColumn(column) {
+  const response = await fetch(reader.dataset[column.key]);
+  if (!response.ok) throw new Error("Download failed");
+  const text = await response.text();
+  const headers = [...text.matchAll(/^(\d+)\) (\[[^\r\n]+\])\r?$/gm)];
   if (headers.length !== Number(reader.dataset.count)) throw new Error("Unexpected entry count");
-
   return headers.map((header, index) => {
     const start = header.index + header[0].length;
     const end = headers[index + 1]?.index ?? text.length;
-    const body = readable(text.slice(start, end).trim());
-    return { id: header[1], body, searchable: normalize(body) };
+    const body = readable(text.slice(start, end).trim(), column.lang);
+    return { id: header[1], key: header[2], body };
   });
+}
+
+function renderRow({ id, texts }) {
+  const row = document.createElement("li");
+  row.className = "card translation-row";
+  row.id = "entry-" + id;
+
+  const number = document.createElement("bdi");
+  number.className = "entry translation-entry";
+  number.textContent = "#" + id;
+  const grid = document.createElement("div");
+  grid.className = "quotes";
+
+  columns.forEach((column, index) => {
+    const quote = document.createElement("div");
+    quote.className = "quote " + column.className;
+    const label = document.createElement("h2");
+    label.className = "translation-label";
+    label.textContent = column.label;
+    const lines = document.createElement("div");
+    lines.className = "lines";
+    lines.lang = column.lang;
+    lines.dir = column.direction;
+    const text = document.createElement("p");
+    text.textContent = texts[index];
+    lines.append(text);
+    quote.append(label, lines);
+    grid.append(quote);
+  });
+
+  row.append(number, grid);
+  return row;
 }
 
 function render() {
   const start = page * pageSize;
   const batch = results.slice(start, start + pageSize);
-  const fragment = document.createDocumentFragment();
-
-  for (const { id, body } of batch) {
-    const item = document.createElement("li");
-    const number = document.createElement("bdi");
-    const text = document.createElement("p");
-    number.textContent = "#" + id;
-    text.textContent = body;
-    item.append(number, text);
-    fragment.append(item);
-  }
-
-  rows.replaceChildren(fragment);
+  rows.replaceChildren(...batch.map(renderRow));
   status.textContent = batch.length
     ? `${start + 1}–${start + batch.length} من ${results.length.toLocaleString("en-US")}`
     : "لا توجد نتائج لهذا البحث.";
@@ -63,25 +90,34 @@ function render() {
 function filter() {
   const query = normalize(search.value);
   const id = /^#?(\d+)$/.exec(query);
-  results = !query ? entries : entries.filter(entry => id ? entry.id === id[1] : entry.searchable.includes(query));
+  results = !query ? entries : entries.filter(entry =>
+    id ? entry.id === id[1] : entry.searchable.some(text => text.includes(query))
+  );
   page = 0;
   render();
 }
 
 async function load() {
-  if (!reader.open || loading || entries) return;
-  loading = true;
-  status.textContent = "جارٍ تحميل النص…";
+  retry.hidden = true;
+  status.textContent = "جارٍ تحميل النصوص…";
+  reader.setAttribute("aria-busy", "true");
   try {
-    const response = await fetch(reader.dataset.source);
-    if (!response.ok) throw new Error("Download failed");
-    entries = parse(await response.text());
+    const versions = await Promise.all(columns.map(loadColumn));
+    entries = versions[0].map((source, index) => {
+      const related = versions.map(version => version[index]);
+      if (related.some(row => row.id !== source.id || row.key !== source.key)) {
+        throw new Error("Entry alignment failed");
+      }
+      const texts = related.map(row => row.body);
+      return { id: source.id, texts, searchable: texts.map(normalize) };
+    });
     search.disabled = false;
     filter();
   } catch {
-    status.textContent = "تعذّر تحميل النص. أغلق القسم وافتحه للمحاولة مرة أخرى، أو حمّل الملف.";
+    status.textContent = "تعذّر تحميل المقارنة.";
+    retry.hidden = false;
   } finally {
-    loading = false;
+    reader.setAttribute("aria-busy", "false");
   }
 }
 
@@ -92,8 +128,8 @@ function goTo(offset) {
   rows.scrollIntoView({ block: "start" });
 }
 
-reader.addEventListener("toggle", load);
 search.addEventListener("input", filter);
 previous.addEventListener("click", () => goTo(-1));
 next.addEventListener("click", () => goTo(1));
+retry.addEventListener("click", load);
 load();
